@@ -22,8 +22,6 @@ import com.das.Hotel.Management.utils.Utils;
 public class RoomServiceImpl implements RoomService {
     @Autowired
     private RoomRepository roomRepository;
-    // @Autowired
-    // private BookingRepository bookingRepository;
     @Autowired
     private AwsS3Service awsS3Service;
 

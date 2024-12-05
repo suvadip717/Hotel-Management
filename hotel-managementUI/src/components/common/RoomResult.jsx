@@ -18,7 +18,7 @@ const RoomResult = ({ roomSearchResults }) => {
               />
               <div className="room-details">
                 <h3>{room.roomType}</h3>
-                <p>Price: ₹{room.roomPrice} / night</p>
+                <p>Price: ₹{room.roomPrice} / Night</p>
                 <p>Description: {room.roomDescription}</p>
               </div>
 

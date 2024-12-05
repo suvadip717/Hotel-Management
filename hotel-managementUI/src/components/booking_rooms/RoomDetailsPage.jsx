@@ -109,7 +109,7 @@ const RoomDetailsPage = () => {
 
         setTimeout(() => {
           setShowMessage(false);
-          navigate("/rooms"); // Navigate to rooms
+          navigate("/rooms");
         }, 10000);
       }
     } catch (error) {
@@ -136,8 +136,8 @@ const RoomDetailsPage = () => {
     <div className="room-details-booking">
       {showMessage && (
         <p className="booking-success-message">
-          Booking successful! Confirmation code: {confirmationCode}. An SMS and
-          email of your booking details have been sent to you.
+          Booking successful!!! Confirmation code: {confirmationCode}. An SMS
+          and email of your booking details have been sent to you.
         </p>
       )}
       {errorMessage && <p className="error-message">{errorMessage}</p>}

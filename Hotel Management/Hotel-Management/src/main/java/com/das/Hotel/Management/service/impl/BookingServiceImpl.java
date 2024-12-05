@@ -14,6 +14,7 @@ import com.das.Hotel.Management.exception.OurException;
 import com.das.Hotel.Management.repo.BookingRepository;
 import com.das.Hotel.Management.repo.RoomRepository;
 import com.das.Hotel.Management.repo.UserRepository;
+import com.das.Hotel.Management.service.SendEmailService;
 import com.das.Hotel.Management.service.interfac.BookingService;
 import com.das.Hotel.Management.utils.Utils;
 
@@ -23,8 +24,8 @@ import org.springframework.data.domain.Sort;
 public class BookingServiceImpl implements BookingService {
     @Autowired
     private BookingRepository bookingRepository;
-    // @Autowired
-    // private RoomServiceImpl roomService;
+    @Autowired
+    private SendEmailService sendEmailService;
     @Autowired
     private RoomRepository roomRepository;
     @Autowired
@@ -56,7 +57,7 @@ public class BookingServiceImpl implements BookingService {
             response.setStatusCode(200);
             response.setMessage("successful");
             response.setBookingConfirmationCode(bookingConfirmationCode);
-
+            sendEmailService.sendConfirmationCode(user, bookingRequest);
         } catch (OurException e) {
             response.setStatusCode(404);
             response.setMessage(e.getMessage());

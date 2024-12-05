@@ -12,6 +12,11 @@ import ProfilePage from "./components/profile/ProfilePage.jsx";
 import EditProfilePage from "./components/profile/EditProfilePage.jsx";
 import AdminPage from "./components/admin/AdminPage.jsx";
 import { ProtectedRoute, AdminRoute } from "./service/guard.jsx";
+import ManageRoomPage from "./components/admin/ManageRoomPage.jsx";
+import AddRoomPage from "./components/admin/AddRoomPage.jsx";
+import EditRoomPage from "./components/admin/EditRoomPage.jsx";
+import ManageBookingPage from "./components/admin/ManageBookingPage.jsx";
+import EditBookingPage from "./components/admin/EditBookingPage.jsx";
 
 function App() {
   return (
@@ -40,6 +45,32 @@ function App() {
               <Route
                 path="/edit-profile"
                 element={<ProtectedRoute component={EditProfilePage} />}
+              />
+
+              {/* Admin Routes */}
+              <Route
+                path="/admin"
+                element={<AdminRoute component={AdminPage} />}
+              />
+              <Route
+                path="/admin/manage-rooms"
+                element={<AdminRoute component={ManageRoomPage} />}
+              />
+              <Route
+                path="/admin/edit-room/:roomId"
+                element={<AdminRoute component={EditRoomPage} />}
+              />
+              <Route
+                path="/admin/add-room"
+                element={<AdminRoute component={AddRoomPage} />}
+              />
+              <Route
+                path="/admin/manage-bookings"
+                element={<AdminRoute component={ManageBookingPage} />}
+              />
+              <Route
+                path="/admin/edit-booking/:bookingCode"
+                element={<AdminRoute component={EditBookingPage} />}
               />
 
               {/* Fallback Route */}
