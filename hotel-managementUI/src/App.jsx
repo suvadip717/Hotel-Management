@@ -42,32 +42,6 @@ function App() {
                 element={<ProtectedRoute component={EditProfilePage} />}
               />
 
-              {/* Admin Routes */}
-              <Route
-                path="/admin"
-                element={<AdminRoute component={AdminPage} />}
-              />
-              {/* <Route
-                path="/admin/manage-rooms"
-                element={<AdminRoute element={<ManageRoomPage />} />}
-              /> */}
-              {/* <Route
-                path="/admin/edit-room/:roomId"
-                element={<AdminRoute element={<EditRoomPage />} />}
-              /> */}
-              {/* <Route
-                path="/admin/add-room"
-                element={<AdminRoute element={<AddRoomPage />} />}
-              /> */}
-              {/* <Route
-                path="/admin/manage-bookings"
-                element={<AdminRoute element={<ManageBookingsPage />} />}
-              /> */}
-              {/* <Route
-                path="/admin/edit-booking/:bookingCode"
-                element={<AdminRoute element={<EditBookingPage />} />}
-              /> */}
-
               {/* Fallback Route */}
               <Route path="*" element={<Navigate to="/login" />} />
             </Routes>
