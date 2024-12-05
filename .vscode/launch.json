@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "HotelManagementApplication",
+            "request": "launch",
+            "mainClass": "com.das.Hotel.Management.HotelManagementApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-HotelManagementApplication<Hotel-Management>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
