@@ -82,6 +82,24 @@ const ProfilePage = () => {
                   alt="Room"
                   className="room-photo"
                 />
+                <button
+                  className="delete-profile-button"
+                  onClick={async () => {
+                    if (
+                      !window.confirm("Are you sure to cancel the booking?")
+                    ) {
+                      return;
+                    }
+                    try {
+                      await ApiService.cancelBooking(booking.id);
+                      navigate("/rooms");
+                    } catch (error) {
+                      setError(error.message);
+                    }
+                  }}
+                >
+                  Cancel Booking
+                </button>
               </div>
             ))
           ) : (
