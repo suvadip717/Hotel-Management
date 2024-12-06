@@ -20,8 +20,21 @@ public class SendEmailService {
         String roomType = booking.getRoom().getRoomType();
         Integer numGuest = booking.getTotalNumOfGuest();
 
-        sendEmail(user.getEmail(), "Hotel Booking Confirmation code " + bookingCode,
+        sendEmail(user.getEmail(), "Hotel Booking Confirmation, Code " + bookingCode,
                 "sir,\n  You booking " + roomType + " room for " + numGuest
+                        + " people in Hotel Star, From " + fromDate + " to " + toDate
+                        + ". Please check all details in your profile.\n" + "Thank you");
+    }
+
+    public void sendCancelationMail(User user, Booking booking) {
+        String bookingCode = booking.getBookingConfirmationCode();
+        String fromDate = booking.getCheckInDate().toString();
+        String toDate = booking.getCheckOutDate().toString();
+        String roomType = booking.getRoom().getRoomType();
+        Integer numGuest = booking.getTotalNumOfGuest();
+
+        sendEmail(user.getEmail(), "Hotel Booking Cancellation, Code " + bookingCode,
+                "sir,\n  You cancelled your booking, " + roomType + " room for " + numGuest
                         + " people in Hotel Star, From " + fromDate + " to " + toDate
                         + ". Please check all details in your profile.\n" + "Thank you");
     }

@@ -125,11 +125,13 @@ public class BookingServiceImpl implements BookingService {
         Response response = new Response();
 
         try {
-            bookingRepository.findById(bookingId).orElseThrow(() -> new OurException("Booking Does Not Exist"));
-            bookingRepository.deleteById(bookingId);
+            Booking booking = bookingRepository.findById(bookingId)
+                    .orElseThrow(() -> new OurException("Booking Does Not Exist"));
             response.setStatusCode(200);
             response.setMessage("successful");
-
+            User user = booking.getUser();
+            sendEmailService.sendCancelationMail(user, booking);
+            bookingRepository.deleteById(bookingId);
         } catch (OurException e) {
             response.setStatusCode(404);
             response.setMessage(e.getMessage());
