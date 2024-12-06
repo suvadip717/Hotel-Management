@@ -6,7 +6,7 @@ Application link
 
 API link
 
-- [API](https://hotel-management-backend-production-d041.up.railway.app)
+- [API](https://hotel-management-backend-production-d041.up.railway.app/rooms/all)
 
 API end points
 
